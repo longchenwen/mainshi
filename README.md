@@ -79,7 +79,29 @@ no: 仅仅redis负责将数据写入os cache就撒手不管了，然后后面os�
   3.slave node也可以连接其他的slave node</br>
   4.slave node做复制的时候，是不会block master node的正常工作的</br>
   5.slave node在做复制的时候，也不会block对自己的查询操作，它会用旧的数据集来提供服务</br>
+  6.slave node主要用来进行横向扩容，做读写分离，扩容的slave node可以提高读的吞吐量</br>
 
+##master持久化对于主从架构的安全保障的意义</br>
+
+如果采用了主从架构，那么建议必须开启master node的持久化！</br>
+
+不建议用slave node作为master node的数据热备，因为那样的话，如果你关掉master的持久化，可能在master宕机重启的时候数据是空的，然后可能一经过复制，salve node数据也丢了
+
+master -> RDB和AOF都关闭了 -> 全部在内存中</br>
+
+master宕机，重启，是没有本地数据可以恢复的，然后就会直接认为自己IDE数据是空的
+
+master就会将空的数据集同步到slave上去，所有slave的数据全部清空
+
+100%的数据丢失
+
+master节点，必须要使用持久化机制
+
+第二个，master的各种备份方案，要不要做，万一说本地的所有文件丢失了; 从备份中挑选一份rdb去恢复master; 这样才能确保master启动的时候，是有数据的</br>
+
+即使采用了后续讲解的高可用机制，slave node可以自动接管master node，但是也可能sentinal还没有检测到master failure，master node就自动重启了，还是可能导致上面的所有slave node数据清空故障</br>
+
+## redis主从复制原理、断点续传、无磁盘化复制、过期key处理
 
 
 
