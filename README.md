@@ -55,22 +55,30 @@ appendonly yes，可以打开AOF持久化机制，在生产环境里面，一般
 
 可以配置AOF的fsync策略，有三种策略可以选择，一种是每次写入一条数据就执行一次fsync; 一种是每隔一秒执行一次fsync; 一种是不主动执行fsync
 
-always: 每次写入一条数据，立即将这个数据对应的写日志fsync到磁盘上去，性能非常非常差，吞吐量很低; 确保说redis里的数据一条都不丢，那就只能这样了
+always: 每次写入一条数据，立即将这个数据对应的写日志fsync到磁盘上去，性能非常非常差，吞吐量很低; 确保说redis里的数据一条都不丢，那就只能这样了</br>
 
-mysql -> 内存策略，大量磁盘，QPS到多少，一两k。QPS，每秒钟的请求数量
-redis -> 内存，磁盘持久化，QPS到多少，单机，一般来说，上万QPS没问题
+mysql -> 内存策略，大量磁盘，QPS到多少，一两k。QPS，每秒钟的请求数量</br>
+redis -> 内存，磁盘持久化，QPS到多少，单机，一般来说，上万QPS没问题</br>
 
-everysec: 每秒将os cache中的数据fsync到磁盘，这个最常用的，生产环境一般都这么配置，性能很高，QPS还是可以上万的
+everysec: 每秒将os cache中的数据fsync到磁盘，这个最常用的，生产环境一般都这么配置，性能很高，QPS还是可以上万的</br>
 
-no: 仅仅redis负责将数据写入os cache就撒手不管了，然后后面os自己会时不时有自己的策略将数据刷入磁盘，不可控了
-
-
+no: 仅仅redis负责将数据写入os cache就撒手不管了，然后后面os自己会时不时有自己的策略将数据刷入磁盘，不可控了</br>
 
 
+##企业级的数据备份和各种灾难下的数据恢复，是怎么做得呢？</br>
 
+##redis如何通过读写分离来承载读请求QPS超过10万+?</br>
+##redis 读写分离 支持高并发</br>
 
+#redis主从架构->读写分离架构->可支持水平扩展的读高并发架构</br>
 
-
+#redis主从架构</br>
+###redis主从的核心机制</br>
+  1.redis采用异步方式复制数据到slave节点，不过redis 2.8开始，slave node会周期性地确认自己每次复制的数据量</br>
+  2.一个master node是可以配置多个slave node的</br>
+  3.slave node也可以连接其他的slave node</br>
+  4.slave node做复制的时候，是不会block master node的正常工作的</br>
+  5.slave node在做复制的时候，也不会block对自己的查询操作，它会用旧的数据集来提供服务</br>
 
 
 
