@@ -3,7 +3,6 @@
 0.集合结构图如下:
 	![image](https://github.com/longchenwen/mainshi/blob/master/src/img/collection.jpg)		
 ## 一.Map容器包含:
-	
 	1.HashMap
 	2.TreeMap
 	3.LinkedHashMap
@@ -40,3 +39,51 @@
 ## 你了解重新调整HashMap大小存在什么问题吗?
 	多线程情况下,产生竞争,最终出现死循环(jdk.1.8之前),1.8jdk之后死循环已经解决,可能出现数据丢失问题
 	
+## 二.List集合主要成员:
+	1.Arraylist
+	2.LinkedList
+## ArrayList 和 LinkedList 的区别是什么？
+	1.Vector的方法都是同步的(Synchronized),是线程安全的(thread-safe)，而ArrayList的方法不是，由于线程的同步必然要影响性能，因此,ArrayList的		性能比Vector好。 
+	2.当Vector或ArrayList中的元素超过它的初始大小时,Vector会将它的容量翻倍,而ArrayList只增加50%的大小，这样,ArrayList就有利于节约内存空间。
+## Set集合主要成员:
+	1.HashSet(无序)
+	2.LinkedHashSet
+	3.TreeSet(有序)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
