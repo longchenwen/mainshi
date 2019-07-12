@@ -1,6 +1,5 @@
 # 集合
-# Map容器:
-## Map容器包含:
+## 一.Map容器包含:
 	1.HashMap
 	2.TreeMap
 	3.LinkedHashMap
