@@ -1,4 +1,4 @@
-# java面试
+# reids
 #redis总结</br>
 1.redis持久化策略之RDB和AOF:</br>
 2.redis主从复制原理分析:</br>
