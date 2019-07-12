@@ -1,6 +1,6 @@
 # 集合
 			
-# 0.集合结构图如下:
+#0.集合结构图如下:
 	![image](https://github.com/longchenwen/mainshi/blob/master/src/img/collection.jpg)		
 ## 一.Map容器包含:
 	
