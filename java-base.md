@@ -1,6 +1,9 @@
 # 集合
-
+			
+# 0.集合结构图如下:
+	![image](https://github.com/longchenwen/mainshi/edit/master/jav)		
 ## 一.Map容器包含:
+	
 	1.HashMap
 	2.TreeMap
 	3.LinkedHashMap
