@@ -1,5 +1,6 @@
 # 集合
-			
+====
+
 0.集合结构图如下:
 	![image](https://github.com/longchenwen/mainshi/blob/master/src/img/collection.jpg)		
 ## 一.Map容器包含:
@@ -7,7 +8,7 @@
 	2.TreeMap
 	3.LinkedHashMap
 	4.HashTable
-	5.ConcurrentHasMap(不是map容器中)
+	5.ConcurrentHasMap
 ## HashMap 和 Hashtable 有什么区别？
 	1.HashMap线程不安全,Hashtable线程安全
 	2.HashMap key,value 可以是null,Hashtable 不可以
@@ -38,6 +39,10 @@
 	找到bucket位置之后，会调用keys.equals()方法去找到链表中正确的节点
 ## 你了解重新调整HashMap大小存在什么问题吗?
 	多线程情况下,产生竞争,最终出现死循环(jdk.1.8之前),1.8jdk之后死循环已经解决,可能出现数据丢失问题
+	
+## 在多并发情况下不适用HashMap,HashTable,使用ConcurrentHasMap的原因?
+线程不安全的HashMap
+    因为多线程环境下，使用Hashmap进行put操作会引起死循环，导致CPU利用率接近100%，所以在并发情况下不能使用HashMap
 	
 ## 二.List集合主要成员:
 	1.Arraylist
