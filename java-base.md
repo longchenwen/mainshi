@@ -21,6 +21,7 @@
 	3.HashMap中使用键对象来计算hashcode值,HashSet使用成员对象来计算hashcode值，对于两个对象来说hashcode可能相同，所以equals()方法用来判断对象的		相等性，如果两个对象不同的话，那么返回false
 	4.HashMap 比加快,key是唯一的
 ## [HashMap jdk1.7源码分析](https://www.cnblogs.com/xiaolovewei/p/7993521.html)
+## [HashMap jdk1.8源码分析](https://blog.csdn.net/m0_37914588/article/details/82287191)
 
 ## HashMap的原理:
 	HashMap是基于hashing(哈希)的原理，我们使用put(key, value)存储对象到HashMap中，
