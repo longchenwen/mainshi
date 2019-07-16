@@ -1,6 +1,4 @@
 # 集合
-====
-
 0.集合结构图如下:
 	![image](https://github.com/longchenwen/mainshi/blob/master/src/img/collection.jpg)		
 ## 一.Map容器包含:
@@ -41,8 +39,8 @@
 	多线程情况下,产生竞争,最终出现死循环(jdk.1.8之前),1.8jdk之后死循环已经解决,可能出现数据丢失问题
 	
 ## 在多并发情况下不适用HashMap,HashTable,使用ConcurrentHasMap的原因?
-线程不安全的HashMap
-    因为多线程环境下，使用Hashmap进行put操作会引起死循环，导致CPU利用率接近100%，所以在并发情况下不能使用HashMap
+* 线程不安全的HashMap,因为多线程环境下，使用Hashmap进行put操作会引起死循环，导致CPU利用率接近100%，所以在并发情况下不能使用HashMap.
+* 效率低下的HashTable容器
 	
 ## 二.List集合主要成员:
 	1.Arraylist
