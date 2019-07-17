@@ -21,3 +21,12 @@ Acceptor：
 NIO：模型图:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/NIO.webp)
 Reactor模型:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/Reactor.webp)
 
+3.AIO:AIO：**异步非阻塞IO**，基于Proactor模型实现。
+每个连接发送过来的请求，都会绑定一个Buffer，然后通知操作系统去完成异步的读，这个时间你就可以去做其他的事情
+等到操作系统完成读之后，就会调用你的接口，给你操作系统异步读完的数据。这个时候你就可以拿到数据进行处理，将数据往回写
+在往回写的过程，同样是给操作系统一个Buffer，让操作系统去完成写，写完了来通知你。
+这俩个过程都有buffer存在，数据都是通过buffer来完成读写。
+这里面的主要的区别在于将数据写入的缓冲区后，就不去管它，剩下的去交给操作系统去完成。
+操作系统写回数据也是一样，写到Buffer里面，写完后通知客户端来进行读取数据。
+AIO：模型图
+
