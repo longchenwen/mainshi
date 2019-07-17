@@ -19,5 +19,5 @@ Acceptor：
 这里的核心就是非阻塞，就那个selector一个线程就可以不停轮询channel，所有客户端请求都不会阻塞，直接就会进来，大不了就是等待一下排着队而已。</br>
 这里面**优化BIO的核心**就是，一个客户端并不是时时刻刻都有数据进行交互，没有必要死耗着一个线程不放，所以客户端选择了让线程歇一歇，只有客户端有相应的操作的时候才发起通知，创建一个线程来处理请求。</br>
 NIO：模型图:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/NIO.webp)
-Reactor模型:![img]()
+Reactor模型:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/Reactor.webp)
 
