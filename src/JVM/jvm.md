@@ -11,7 +11,7 @@ BIO模型图：![img](https://github.com/longchenwen/mainshi/blob/master/src/img
 
 Acceptor：
 传统的IO模型的网络服务的设计模式中有俩种比较经典的设计模式：一个是多线程， 一种是依靠线程池来进行处理。
-如果是基于多线程的模式来的话，就是这样的模式，这种也是Acceptor线程模型。
-![img]()
+如果是基于多线程的模式来的话，就是这样的模式，这种也是Acceptor线程模型。</br>
+![img](https://github.com/longchenwen/mainshi/blob/master/src/img/Acceptor.webp)
 
 
