@@ -27,6 +27,6 @@ Reactor模型:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/
 在往回写的过程，同样是给操作系统一个Buffer，让操作系统去完成写，写完了来通知你。
 这俩个过程都有buffer存在，数据都是通过buffer来完成读写。
 这里面的主要的区别在于将数据写入的缓冲区后，就不去管它，剩下的去交给操作系统去完成。
-操作系统写回数据也是一样，写到Buffer里面，写完后通知客户端来进行读取数据。
-AIO：模型图
+操作系统写回数据也是一样，写到Buffer里面，写完后通知客户端来进行读取数据。</br>
+AIO：模型图: ![img](https://github.com/longchenwen/mainshi/blob/master/src/img/AIO%EF%BC%9A%E6%A8%A1%E5%9E%8B%E5%9B%BE.webp)
 
