@@ -56,7 +56,13 @@ public class SemaphoreExample1 {
 }
 
 ```
-## CountDownLatch:
+## Semaphore使用的场景:
+	控制某个资源被同时访问的个数,例如:mysql仅提供同一时刻20个资源访问
+## CountDownLatch （倒计时器）
         1. CountDownLatch 一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待,
            即CountDownLatch允许一个或多个线程等待其他线程完成操作.
-         2. 应用的原理:线程阻塞.每执行完一个线程countDown()一次,就是减数一次
+        2. 应用的原理:线程阻塞.每执行完一个线程countDown()一次,就是减数一次,直到减到0
+## CountDownLatch 的不足:
+	CountDownLatch是一次性的，计数器的值只能在构造方法中初始化一次，之后没有任何机制再次对其设置值，当CountDownLatch使用完毕后，它不能再次被使用。
+## CyclicBarrier(循环栅栏)
+	是每个线程相互等待,等到达到设定的计数器时候,所有的线程在执行
