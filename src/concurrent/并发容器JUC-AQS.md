@@ -1,4 +1,4 @@
-# 并发容器JUC-AbstractQueuedSynchronzier(AQS)同步组件
+# [并发容器JUC-AbstractQueuedSynchronzier(AQS)同步组件](https://blog.csdn.net/qq_34337272/article/details/83655291)
 
 ## AQS简介:
         AQS的全称为（AbstractQueuedSynchronizer），这个类在java.util.concurrent.locks包下面.
@@ -15,6 +15,47 @@
                 1.公平锁：按照线程在队列中的排队顺序，先到者先拿到锁
                 2.非公平锁：当线程要获取锁时，无视队列顺序直接去抢锁，谁抢到就是谁的
         2.Share（共享）：多个线程可同时执行，Semaphore、CountDownLatCh,CyclicBarrier、ReadWriteLock 
+## Semaphore(信号量)
+* 允许多个线程同时访问
+* synchronized 和 ReentrantLock 都是一次只允许一个线程访问某个资源，Semaphore(信号量)可以指定多个线程同时访问某个资源。
+示例代码如下：
+```
+public class SemaphoreExample1 {
+	// 请求的数量
+	private static final int threadCount = 550;
+
+	public static void main(String[] args) throws InterruptedException {
+		// 创建一个具有固定线程数量的线程池对象（如果这里线程池的线程数量给太少的话你会发现执行的很慢）
+		ExecutorService threadPool = Executors.newFixedThreadPool(300);
+		// 一次只能允许执行的线程数量。
+		final Semaphore semaphore = new Semaphore(20);
+
+		for (int i = 0; i < threadCount; i++) {
+			final int threadnum = i;
+			threadPool.execute(() -> {// Lambda 表达式的运用
+				try {
+					semaphore.acquire();// 获取一个许可，所以可运行线程数量为20/1=20
+					test(threadnum);
+					semaphore.release();// 释放一个许可
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			});
+		}
+		threadPool.shutdown();
+		System.out.println("finish");
+	}
+
+	public static void test(int threadnum) throws InterruptedException {
+		Thread.sleep(1000);// 模拟请求的耗时操作
+		System.out.println("threadnum:" + threadnum);
+		Thread.sleep(1000);// 模拟请求的耗时操作
+	}
+}
+
+```
 ## CountDownLatch:
         1. CountDownLatch 一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待,
            即CountDownLatch允许一个或多个线程等待其他线程完成操作.
