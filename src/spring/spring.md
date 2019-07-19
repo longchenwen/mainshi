@@ -12,18 +12,18 @@
 	2.创建配置文件,解析配置文件,得到类的全路径,通过 反射得到对象
 
 ## 4.spring 管理事物方式:
-	 1.@Transactional 注解声明事物
+	1.@Transactional 注解声明事物
 	2.Apeectj aop 方式
 
 ## 5.spring 事物管理失效:
 	1.private 方法, final 方法 和 static 方法不能添加事务
 
 ## 6.spring 支持几种 bean 的作用域？
-	  1.singleton
-		2.prototype
-		3.request
-		4.session
-		5.global session
+	1.singleton
+	2.prototype
+	3.request
+	4.session
+	5.global session
 
 ## 7.spring 事务实现方式有哪些？
 	1.事物的四种特性:
@@ -35,6 +35,10 @@
  	事物实现方式:
 		1.编程式事务管理(不用)
 		2.声明式事务管理
-		基于TransactionProxyFactoryBean的声明式事务管理
-		基于@Transactional 的声明式事务管理
+			1.基于TransactionProxyFactoryBean的声明式事务管理
+			2.基于@Transactional 的声明式事务管理
 		3.基于Aspectj AOP配置事务
+		
+		
+		
+		
