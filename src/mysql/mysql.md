@@ -33,3 +33,25 @@
 		4.分表:垂直分表,水平分表
 		5.分区:
 	5.数据库维护
+## 索引
+	1.什么事索引:索引是一种特殊的文件(InnoDB数据表上的索引是表空间的一个组成部分)，
+	它们包含着对数据表里所有记录的引用指针。
+	更通俗的说，索引就相当于目录。当你在用新华字典时，帮你把目录撕掉了，
+	你查询某个字开头的成语只能从第一页翻到第一千页。累！把目录还给你，则能快速定位！
+	2.索引的优缺点:
+		2.1.优点:可以大大加快数据的检索速度，这也是创建索引的最主要的原因,
+		且通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能
+		2.2.缺点:索引需要额外的维护成本；因为索引文件是单独存在的文件,
+		对数据的增加,修改,删除,都会产生额外的对索引文件的操作,这些操作需要消耗额外的IO,会降低增/改/删的执行效率。
+## 创建索引三种方式:
+	1.第一种方式:在执行create table时使用 index 索引name
+	2.第二种方式:使用alter table 命令去增加索引:
+		2.1. alter table table_name add index index_name(column_list),添加普通索引,索引值可以多次出现
+		2.2. alter table table_name add unique(column_list),唯一索引,索引的值必须是唯一的(null除外,null可能出现多次)
+		2.3. alter table table_name add primary key (column_list),主键索引,添加一个主键,唯一且不能为Null
+		2.4. alter table table_name add fulltext index_name(column_list),全文索引
+		备注:其中table_name是要增加索引的表名，column_list指出对哪些列进行索引，多列时各列之间用逗号分隔。
+		索引名index_name可自己命名，缺省时，MySQL将根据第一个索引列赋一个名称。另外，ALTER TABLE允许在单个语句中更改多个表，因此可以在同时创建多个索引
+	3.第三种方法:使用CREATE INDEX命令创建,CREATE INDEX可对表增加普通索引或UNIQUE索引。（但是，不能创建PRIMARY KEY索引）
+		3.1 create index index_name on table_name(column_list)
+		3.2 create unique index_name on table_name(column_list)
