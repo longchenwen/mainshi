@@ -1,5 +1,8 @@
 # dubbo 的学习
 
+我这里只是通过官网的总结一下,通过看官网把自己理解整理出来,大多数都是官网的东西</br>
+[官网地址](http://dubbo.apache.org/zh-cn/docs/user/quick-start.html)
+
 ## 一.spring 整合 dubbo框架
 1.provider.xml(服务提供者配置文件讲解):
 * 定义提供服务接口:**DemoService**
@@ -45,7 +48,7 @@ public class DemoServiceImpl implements DemoService {
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
  
-    <!-- 声明需要暴露的服务接口 -->
+    <!-- 声明需要暴露的服务接口 -->  注意这是**接口**,ref指定*实现接口*的类
     <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService" />
  
     <!-- 和本地bean一样实现服务 -->
@@ -53,6 +56,26 @@ public class DemoServiceImpl implements DemoService {
 </beans>
 ```
 2.consumer.xml(服务提供者配置文件讲解):
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans        
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd        
+    http://dubbo.apache.org/schema/dubbo        
+    http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+ 
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="consumer-of-helloworld-app"  />
+ 
+    <!-- 使用multicast广播注册中心暴露发现服务地址 -->
+    <dubbo:registry address="multicast://224.5.6.7:1234" />
+ 
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+    <dubbo:reference id="demoService" interface="org.apache.dubbo.demo.DemoService" />
+</beans>
+```
 
 ## 二.springboot 整合 dubbo框架
 
