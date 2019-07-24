@@ -103,4 +103,7 @@ public class DemoServiceImpl implements DemoService {
 @Reference
 private DemoService DemoService;//服务提供者的接口
 ```
-### 2.配置启动检查
+### 2.配置:启动检查  (在示例显示所有的配置)
+启动检查:正常情况下,我们服务提供者和消费者都会向注册中心注册服务,如果,我们在启动消费服务的时候发现
+服务提供者没有想服务中心注册服务,这样服务消费者会报错误.
+
