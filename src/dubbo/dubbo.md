@@ -79,3 +79,27 @@ public class DemoServiceImpl implements DemoService {
 
 ## 二.springboot 整合 dubbo框架
 
+0.*提供服务*和*消费服务*都是在主运行程序使用注解开启dubbo:@EnableDubbo
+
+1.springboot只需要在配置文件application.yml文件配置基本的信息:
+```
+#提供服务和消费服务配置大体相同
+
+dubbo.application.name=service-provider #服务应用的名字
+dubbo.registry.address=zookeeper://127.0.0.1:2181 # 注册中心的地址
+dubbo.monitor.protocol=registry #注册中心
+```
+2.*提供服务* 使用@Service 暴露提供的接口 注意:@Service 是dubbo里面的注解:
+```
+@Service //dubbo注解 com.alibaba.dubbo.config.annotation.Service
+public class DemoServiceImpl implements DemoService {
+    public String sayHello(String name) {
+        return "Hello " + name;
+    }
+}
+```
+3.*消费服务*是通过注解@Reference调用服务的
+```
+@Reference
+private DemoService DemoService;//服务提供者的接口
+```
