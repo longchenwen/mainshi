@@ -104,7 +104,14 @@ public class DemoServiceImpl implements DemoService {
 private DemoService DemoService;//服务提供者的接口
 ```
 ### 2.配置:启动检查  (在示例显示所有的配置)
-启动检查:正常情况下,我们服务提供者和消费者都会向注册中心注册服务,如果,我们在启动消费服务的时候发现
-服务提供者没有想服务中心注册服务,这样服务消费者会报错误.<br/>
+    启动检查:正常情况下,我们服务提供者和服务消费者都会向注册中心注册服务,如果,我们在启动消费服务者时发现
+    服务提供者没有向服务中心注册服务,这样服务消费者会报错误.
 在官网的位置:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/dubbo%E5%90%AF%E5%8A%A8%E6%A3%80%E6%9F%A5.png)
 
+### 3.配置超时:
+    1.timeout是 <dubbo:reference/> 注解里面的属性
+    超时是:服务消费者调用服务提供者时间超时
+    
+    2.参数的意义:
+    * timeout:默认超时的时间
+    * retries="":重试次数，不包含第一次调用，0代表不重试
