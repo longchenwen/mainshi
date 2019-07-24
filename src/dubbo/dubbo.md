@@ -105,5 +105,6 @@ private DemoService DemoService;//服务提供者的接口
 ```
 ### 2.配置:启动检查  (在示例显示所有的配置)
 启动检查:正常情况下,我们服务提供者和消费者都会向注册中心注册服务,如果,我们在启动消费服务的时候发现
-服务提供者没有想服务中心注册服务,这样服务消费者会报错误.
+服务提供者没有想服务中心注册服务,这样服务消费者会报错误.<br/>
+在官网的位置:![img](https://github.com/longchenwen/mainshi/blob/master/src/img/dubbo%E5%90%AF%E5%8A%A8%E6%A3%80%E6%9F%A5.png)
 
