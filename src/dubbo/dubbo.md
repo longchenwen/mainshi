@@ -78,7 +78,7 @@ public class DemoServiceImpl implements DemoService {
 ```
 
 ## 二.springboot 整合 dubbo框架
-
+### 1.启动配置
 0.*提供服务*和*消费服务*都是在主运行程序使用注解开启dubbo:@EnableDubbo
 
 1.springboot只需要在配置文件application.yml文件配置基本的信息:
@@ -103,4 +103,4 @@ public class DemoServiceImpl implements DemoService {
 @Reference
 private DemoService DemoService;//服务提供者的接口
 ```
-===
+### 2.配置启动检查
