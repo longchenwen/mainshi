@@ -38,11 +38,11 @@ dubbo 支持 hession、Java 二进制序列化、json、SOAP 文本序列化多�
 **负载均衡策略有一下几种:**
 1. random loadbalance
     默认情况下，dubbo 是 random loadbalance ，即*随机调用*实现负载均衡，可以对 provider 不同实例设置不同的权重，会按照权重来负载均衡，权重越大分配流量越高，一般就用这个默认的就可以了。</br>
-2.roundrobin loadbalance</br>.
+2. roundrobin loadbalance</br>.
     这个的话默认就是均匀地将流量打到各个机器上去，但是如果各个机器的性能不一样，容易导致性能差的机器负载过高。所以此时需要调整权重，让性能差的机器承载权重小一些，流量少一些。</br>
-3.leastactive loadbalance</br>
+3. leastactive loadbalance</br>
     这个就是自动感知一下，如果某个机器性能越差，那么接收的请求越少，越不活跃，此时就会给**不活跃的性能差的机器更少的请求**。</br>.
-4.consistanthash loadbalance</br>
+4. consistanthash loadbalance</br>
     一致性 Hash 算法，相同参数的请求一定分发到一个 provider 上去，provider 挂掉的时候，会基于虚拟节点均匀分配剩余的流量，抖动不会太大。**如果你需要的不是随机负载均衡**，是要一类请求都到一个节点，那就走这个一致性 Hash 策略。</br>
     
     
