@@ -20,3 +20,5 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   7. 绑定（Binding）：交换机和队列之间通过路由键（routing key）相互绑定起来，并根据路由键将消息路由到对应队列。
   Routing key:一个路由规则,虚拟机可用他来确定如何路由一个特定消息.
   8. 队列（Queue）：消息的载体，exchange中的消息将被路由到队列中，并推送给消费者或者被消费者取走.
+## rabbitMq整体架构图:
+![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)
