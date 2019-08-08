@@ -9,3 +9,6 @@ RabbitMQ是使用Erlang语言开发的开源消息队列系统,基于AMQP协议�
   5.保证在数据不丢失的前提下做到高可靠性,可用性
 ## 什么是AMQP高级消息队列协议?
 **AMQP（Advanced Message Queue Protocol 高级消息队列协议）**：是一个网络协议，它支持符合条件的客户端和消息代理中间件（message middleware broker）进行通讯.
+AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/AMQP%E5%8D%8F%E8%AE%AE%E6%A8%A1%E5%9E%8B%E5%9B%BE.jpg)
+
+
