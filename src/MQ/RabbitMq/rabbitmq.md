@@ -22,3 +22,6 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   8. 队列（Queue）：消息的载体，exchange中的消息将被路由到队列中，并推送给消费者或者被消费者取走.
 ## rabbitMq整体架构图:
 ![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)
+## RabbitMQ消息流程图:
+![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E6%B6%88%E6%81%AF%E6%B5%81%E8%BD%AC%E5%9B%BE.jpg)
+
