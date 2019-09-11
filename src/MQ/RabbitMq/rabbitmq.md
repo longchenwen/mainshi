@@ -25,3 +25,11 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 ## RabbitMQ消息流程图:
 ![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E6%B6%88%E6%81%AF%E6%B5%81%E8%BD%AC%E5%9B%BE.jpg)
 
+## RabbitMq的安装:
+  1.采用是rpm格式的安装
+  2.启动命令:
+  rabbitmq-server start &</br>
+  模块启动:rabbitmqctl start_app</br>
+  管理插件：rabbitmq-plugins enable rabbitmq_management</br>
+
+
