@@ -56,6 +56,10 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 
 2. 消息的延迟投递,做第二次确认,回调检查
 ![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/%E7%94%9F%E4%BA%A7%E7%AB%AF%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%8A%95%E9%80%92%E4%BA%8C.png)
+     1. 生成两条消息,第二条消息**延迟**第一条消息发送
+     2. 消费端接收消息,发送确认消息大MQ broker ,这是回调服务接收到这条确认消息,存储到数据库
+     3. 回调服务同时还监听延迟发送的消息,监听到消息和数据库做对比,如果有就完事,没有就补偿
+     4. 在回到开始发送消息的服务,让再次发送一次信息.
 
 
 
