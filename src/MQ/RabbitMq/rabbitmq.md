@@ -33,6 +33,7 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   管理插件：rabbitmq-plugins enable rabbitmq_management</br>
 ## 交换机的类型:
   1.Direct exchange（直连交换机):根据消息携带的路由键（routing key）将消息投递给对应队列的(Queue)
+  ** 生产者和消费者的routingKey必须相同 **
       
 
 
