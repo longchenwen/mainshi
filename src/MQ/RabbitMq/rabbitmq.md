@@ -36,3 +36,16 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   **生产者和消费者的routingKey必须相同**
   2. Topic exchange（主题交换机）:队列(queue)通过路由键(routingkey)绑定到交换机上，然后，交换机根据消息里的路由值，将消息路由给一个或多个绑定队列.
   3. Fanout exchange（扇型交换机）:不设置路右键,只需要简单的将队列绑定到交换机上.
+## 消息队列: 
+  1. 消息队列,实际存储消息数据
+  2.Durability:是否持久化, Dutable:是,Transient:否to
+  3.Auto delete:如果选择yes,代表当最后一个监听被移除后,该Queue会被自动删除
+## 什么是生产端的可靠性投递
+  1. 保证消息的成功发出
+	2. 保障MQ节点的成功接收
+	3. 发送端接收到MQ节点(Broker确认应答)
+	4. 完善的消息进行补偿机制
+
+
+
+  
