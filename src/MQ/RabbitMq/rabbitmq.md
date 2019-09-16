@@ -45,6 +45,9 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 2. 保障MQ节点的成功接收
 3. 发送端接收到MQ节点(Broker确认应答)
 4. 完善的消息进行补偿机制
+## 生产端-可靠性投递解决方案
+1. 消息落库,对消息状态进行打标
+2. 消息的延迟投递,做第二次确认,回调检查
 
 
 
