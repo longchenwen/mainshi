@@ -55,6 +55,7 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
     5. 解决设置一个定时任务,间隔一定的时间在数据库取出状态是初始化的状态,重新发送信息,知道成功为止.冲次发送的次数做限制,最多几次.
 
 2. 消息的延迟投递,做第二次确认,回调检查
+![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/%E7%94%9F%E4%BA%A7%E7%AB%AF%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%8A%95%E9%80%92%E4%BA%8C.png)
 
 
 
