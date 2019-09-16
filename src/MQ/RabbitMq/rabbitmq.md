@@ -48,11 +48,11 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 ## 生产端-可靠性投递解决方案
 1. 消息落库,对消息状态进行打标</br>
 解析图![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/%E7%94%9F%E4%BA%A7%E7%AB%AF%E5%8F%AF%E9%9D%A0%E6%80%A7%E6%8A%95%E9%80%92(1).png)
-1. 要发送的消息保存到数据库中,消息设置一个状态
-2. 在保证数据库持久化成功之后,发送消息到MQ broker
-3. 在生产端异步监听MQ broker 返回的信息,更改消息的状态(无论返回的是ture或者是false都要改变状态)
-4. 如果step3中断,confirm listenser 一直没有接收消息,消息的状态始终是初始化的状态,这样不对,怎么解决
-5. 解决设置一个定时任务,间隔一定的时间在数据库取出状态是初始化的状态,重新发送信息,知道成功为止.
+    1. 要发送的消息保存到数据库中,消息设置一个状态
+    2. 在保证数据库持久化成功之后,发送消息到MQ broker
+    3. 在生产端异步监听MQ broker 返回的信息,更改消息的状态(无论返回的是ture或者是false都要改变状态)
+    4. 如果step3中断,confirm listenser 一直没有接收消息,消息的状态始终是初始化的状态,这样不对,怎么解决
+    5. 解决设置一个定时任务,间隔一定的时间在数据库取出状态是初始化的状态,重新发送信息,知道成功为止.
 
 2. 消息的延迟投递,做第二次确认,回调检查
 
