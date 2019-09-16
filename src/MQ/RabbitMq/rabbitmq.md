@@ -41,10 +41,10 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   2.Durability:是否持久化, Dutable:是,Transient:否to
   3.Auto delete:如果选择yes,代表当最后一个监听被移除后,该Queue会被自动删除
 ## 什么是生产端的可靠性投递
-  1. 保证消息的成功发出
-	2. 保障MQ节点的成功接收
-	3. 发送端接收到MQ节点(Broker确认应答)
-	4. 完善的消息进行补偿机制
+1. 保证消息的成功发出
+2. 保障MQ节点的成功接收
+3. 发送端接收到MQ节点(Broker确认应答)
+4. 完善的消息进行补偿机制
 
 
 
