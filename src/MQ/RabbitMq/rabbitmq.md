@@ -34,7 +34,5 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 ## 交换机的类型:
   1. Direct exchange（直连交换机):根据消息携带的路由键（routingkey）将消息投递给对应队列的(Queue)</br>
   **生产者和消费者的routingKey必须相同**
-  2. Topic exchange（主题交换机）:队列(queue)通过路由键(routingkey)绑定到交换机上，然后，交换机根据消息里的路由值，将消息路由给一个或多个绑定队列。
-   
-
-
+  2. Topic exchange（主题交换机）:队列(queue)通过路由键(routingkey)绑定到交换机上，然后，交换机根据消息里的路由值，将消息路由给一个或多个绑定队列.
+  3. Fanout exchange（扇型交换机）:不设置路右键,只需要简单的将队列绑定到交换机上.
