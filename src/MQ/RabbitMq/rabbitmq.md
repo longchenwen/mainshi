@@ -99,6 +99,36 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 	3. 但在某些情况下, 如果在发送消息的时候, 当前的exchange不存在或者指定的路由key路由不到, 这个时候如果我们需要监听这种不可达的消息, 就要使用Return Listener
 	4. 在基础API中有一个关键的配置项Mandatory : 如果为true, 则监听器会接收到路由不可达的消息, 然后进行后续处理, 如果为false, 那么broker端自动删除该消息
 
+## 消费端自定义监听及自定义消费者
+```
+**
+ * 消费端自定义监听及自定义消费者
+ */
+public class MyConsumer extends DefaultConsumer {
+
+	public MyConsumer(Channel channel) {
+		super(channel);
+	}
+	/**
+	 * 获取到消费的信息
+	 * @param consumerTag:消费标签
+	 * @param envelope:对象
+	 * @param properties:
+	 * @param body:
+	 * @throws IOException
+	 */
+	@Override
+	public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
+		System.err.println("-----------consume message----------");
+		System.err.println("consumerTag: " + consumerTag);
+		System.err.println("envelope: " + envelope);
+		System.err.println("properties: " + properties);
+		System.err.println("body: " + new String(body));
+	}
+
+
+}
+```
 
 
 
