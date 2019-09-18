@@ -78,8 +78,9 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
   2. 如何实现Confirm确认消息(生产端)
     1. 在channel上开启确认模式 : channel.confirmSelect()
     2. 在channel上添加监听 : addConfirmListener, 监听成功和失败的返回结果, 根据具体的结果对消息进行重新发送, 或记录日志等后续处理
+    
     ```
-    //添加一个确认监听
+    		//添加一个确认监听
 		channel.addConfirmListener(new ConfirmListener() {
 			@Override
 			public void handleNack(long deliveryTag, boolean multiple) throws IOException {
