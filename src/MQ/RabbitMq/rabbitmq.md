@@ -93,7 +93,11 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 			}
 		});
     
-	
+## Return消息机制(生产端)
+	1. Return Listener用于处理一些不可路由的消息
+	2. 正常情况下消息生产者通过指定一个Exchange和RoutingKey, 把消息送到某一个队列中去, 然后消费者监听队列, 进行消费操作
+	3. 但在某些情况下, 如果在发送消息的时候, 当前的exchange不存在或者指定的路由key路由不到, 这个时候如果我们需要监听这种不可达的消息, 就要使用Return Listener
+	4. 在基础API中有一个关键的配置项Mandatory : 如果为true, 则监听器会接收到路由不可达的消息, 然后进行后续处理, 如果为false, 那么broker端自动删除该消息
 
 
 
