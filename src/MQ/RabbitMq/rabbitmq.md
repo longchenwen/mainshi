@@ -93,7 +93,7 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 			}
 		});
     
-	```
+	
 
 
 
