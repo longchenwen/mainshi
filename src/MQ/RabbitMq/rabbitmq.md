@@ -79,20 +79,20 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
     1. 在channel上开启确认模式 : channel.confirmSelect()
     2. 在channel上添加监听 : addConfirmListener, 监听成功和失败的返回结果, 根据具体的结果对消息进行重新发送, 或记录日志等后续处理
     
-    ```
+    
     		//添加一个确认监听
 		channel.addConfirmListener(new ConfirmListener() {
-			@Override
+			@Override //失败
 			public void handleNack(long deliveryTag, boolean multiple) throws IOException {
 				System.err.println("-------no ack!-----------");
 			}
 			
-			@Override
+			@Override //成功
 			public void handleAck(long deliveryTag, boolean multiple) throws IOException {
 				System.err.println("-------ack!-----------");
 			}
 		});
-    ```
+    
 
 
 
