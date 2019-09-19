@@ -186,5 +186,12 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 		1.toMzessage:java对象转换为Message对象
 		2.fromMessage:Message对象转换为java对象
 4. json转换器:Jackson2JsonMessageConverter:可以进场java的转换功能
-5.DefaultJackson2JavaTypeMapper映射器:可以进行java对象的映射关系
+5. DefaultJackson2JavaTypeMapper映射器:可以进行java对象的映射关系
+
+## RabbitMq 集群架构模式
+
+## 主备模式
+	实现RabbitMQ的高可用集群，一般在并发和数据量不高的情况下，这种模式非常的好且简单。主备模式也称为Warren模式
+	主备模式:主节点提供读写，从节点不提供读写服务，只是负责提供备份服务,备份节点的主要功能是在主节点宕机时，完成自动切换 从-->主
+	主从模式:主节点提供读写，从节点只读
   
