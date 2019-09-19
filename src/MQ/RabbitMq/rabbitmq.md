@@ -195,4 +195,4 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 	主备模式:主节点提供读写，从节点不提供读写服务，只是负责提供备份服务,备份节点的主要功能是在主节点宕机时，完成自动切换 从-->主
 	主从模式:主节点提供读写，从节点只读
 1. 主备模式：所谓rabbitmq另外一种模式就是warren（兔子窝），就是一个主/备方案（主节点如果挂了，从节点提供服务而已，和activemq利用zookeeper做主/备一样）如图下所示:
-  
+  ![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E4%B8%BB%E5%A4%87%E6%A8%A1%E5%BC%8F.png)
