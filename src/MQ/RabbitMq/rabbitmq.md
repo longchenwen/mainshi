@@ -159,7 +159,23 @@ prefetchSize和global这两项, RabbitMQ没有实现, 暂且不关注, prefetchC
 1. 它是在之前于 SpringAMQP 整合的时候进行发送消息的关键类。
 2. 它提供了丰富的发送消息方法，包括可靠性投递消息方法、回调监听消息接口 ConfirmCallback、返回值确认接口 ReturnCallback 等等。同样我们需要进行注入到 Spring 容器中，然后直接使用。RabbitTemplate 在 Spring 整合时需要实例化，但是在 Springboot 整合时，在配置文件里添加配置即可
 
+## SimpleMessageListenerContainer 即简单消息监听容器
 
+关注
+SpringAMQP 消息容器 - SimpleMessageListenerContainer
+	简述:SimpleMessageListenerContainer 即简单消息监听容器。
+	这个类非常的强大，我们可以对他进行很多的设置，用对于消费者的配置项，这个类都可以满足。它有监听单个或多个队列、自动启动、自动声明功能。
 
+1. 它可以设置事务特性、事务管理器、事务属性、事务并发、是否开启事务、回滚消息等。但是我们在实际生产中，很少使用事务，基本都是采用补偿机制。
+
+2. 它可以设置消费者数量、最小最大数量、批量消费。
+
+3. 它可以设置消息确认和自动确认模式、是否重回队列、异常捕获 Handler 函数。
+
+4. 它可以设置消费者标签生成策略、是否独占模式、消费者属性等。
+
+5. 它还可以设置具体的监听器、消息转换器等等。
+
+6.注意: SimpleMessageListenerContainer 可以进行动态设置，比如在运行中的应用可以动态的修改其消费者数量的大小、接收消息的模式等。很多基于 rabbitMQ 的自制定化后端管控台在进行设置的时候，也是根据这一去实现的。所以可以看出 SpringAMQP 非常的强大
 
   
