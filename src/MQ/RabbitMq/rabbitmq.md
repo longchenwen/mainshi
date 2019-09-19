@@ -149,6 +149,17 @@ prefetchSize和global这两项, RabbitMQ没有实现, 暂且不关注, prefetchC
 	1. 消费端重回队列是为了对没有处理成功的消息, 把消息重新回递给Broker
 	2.一般在实际应用中, 都会关闭重回队列, 也就是设置为False
 
+## TTL队列/消息
+	1.TTL是Time To Live的缩写, 也就是生存时间
+	2.RabbitMQ支持消息的过期时间, 在消息发送时可以进行指定
+	3.RabbitMQ支持队列的过期时间, 从消息入队列开始计算, 只要超过了队列的超时时间配置, 那么消息会自动清除
+	
+## RabbitMQ和spring AMQP整合
+## 消息模板RabbitTemplate
+1. 它是在之前于 SpringAMQP 整合的时候进行发送消息的关键类。
+2. 它提供了丰富的发送消息方法，包括可靠性投递消息方法、回调监听消息接口 ConfirmCallback、返回值确认接口 ReturnCallback 等等。同样我们需要进行注入到 Spring 容器中，然后直接使用。RabbitTemplate 在 Spring 整合时需要实例化，但是在 Springboot 整合时，在配置文件里添加配置即可
+
+
 
 
   
