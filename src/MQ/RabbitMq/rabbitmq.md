@@ -177,5 +177,10 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 5. 它还可以设置具体的监听器、消息转换器等等。
 
 6.注意: SimpleMessageListenerContainer 可以进行动态设置，比如在运行中的应用可以动态的修改其消费者数量的大小、接收消息的模式等。很多基于 rabbitMQ 的自制定化后端管控台在进行设置的时候，也是根据这一去实现的。所以可以看出 SpringAMQP 非常的强大
+## MessageListenerAdapter  消息监听适配器
+
+## MessageConverter 消息转化器
+1. 我们在进行,发送消息的时候,正常情况下消息体为二进制的数据方式进行传输,如果希望内部帮我们进行转换,或者指定自定义的转换器,就需要用到MessageConverter	
+
 
   
