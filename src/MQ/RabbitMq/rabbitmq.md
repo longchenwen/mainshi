@@ -181,6 +181,8 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 
 ## MessageConverter 消息转化器
 1. 我们在进行,发送消息的时候,正常情况下消息体为二进制的数据方式进行传输,如果希望内部帮我们进行转换,或者指定自定义的转换器,就需要用到MessageConverter	
-
-
+2. 自定义常用转化器:MessageConverter,一般来讲都需要实现这个接口
+3. 重写下面两个方法:
+	1.toMzessage:java对象转换为Message对象
+	2.fromMessage:Message对象转换为java对象
   
