@@ -134,11 +134,11 @@ public class MyConsumer extends DefaultConsumer {
 
 ## 消费端的限流 
 1. RabbitMQ提供了一种qos(服务质量保证)功能, 即在非自动确认消息的前提下, 如果一定数目的消息(通过consumer或者channel设置qos的值)未被确认前, 不进行消费新的消息.自动签收要设置成false, 建议实际工作中也设置成false
-2. void basicQos(int prefetchSize, int prefetchCount, boolean global) throws IOException;
-prefetchSize : 消息大小限制, 一般设置为0, 消费端不做限制
-prefetchCount : 会告诉RabbitMQ不要同时给一个消费者推送多于N个消息, 即一旦有N个消息还没有ack, 则该consumer将block(阻塞), 直到有消息ack
-global : true/false 是否将上面设置应用于channel, 简单来说就是上面的限制是channel级别的还是consumer级别
-注意 :
+2. void basicQos(int prefetchSize, int prefetchCount, boolean global) throws IOException;</br>
+prefetchSize : 消息大小限制, 一般设置为0, 消费端不做限制</br>
+prefetchCount : 会告诉RabbitMQ不要同时给一个消费者推送多于N个消息, 即一旦有N个消息还没有ack, 则该consumer将block(阻塞), 直到有消息ack</br>
+global : true/false 是否将上面设置应用于channel, 简单来说就是上面的限制是channel级别的还是consumer级别</br>
+注意 :</br>
 prefetchSize和global这两项, RabbitMQ没有实现, 暂且不关注, prefetchCount在autoAck设置false的情况下生效, 即在自动确认的情况下这两个值是不生效的
 
 
