@@ -101,7 +101,7 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
 
 ## 消费端自定义监听及自定义消费者
 ```
-**
+/**
  * 消费端自定义监听及自定义消费者
  */
 public class MyConsumer extends DefaultConsumer {
@@ -129,6 +129,17 @@ public class MyConsumer extends DefaultConsumer {
 
 }
 ```
+## 什么是消费端限流?
+假设一个场景,首先,我们Rabbitmq服务器有上成千上万条未处理的消息,我们随便打开一个消费者客户端,会出现,巨量的消息瞬间全部推送过来,但是我们单个客户端无法同时处理这么多数据,这时候我们就要在消费端限制推送过来的数据的条数.
+
+## 消费端的限流 
+1. RabbitMQ提供了一种qos(服务质量保证)功能, 即在非自动确认消息的前提下, 如果一定数目的消息(通过consumer或者channel设置qos的值)未被确认前, 不进行消费新的消息.自动签收要设置成false, 建议实际工作中也设置成false
+2. void basicQos(int prefetchSize, int prefetchCount, boolean global) throws IOException;
+prefetchSize : 消息大小限制, 一般设置为0, 消费端不做限制
+prefetchCount : 会告诉RabbitMQ不要同时给一个消费者推送多于N个消息, 即一旦有N个消息还没有ack, 则该consumer将block(阻塞), 直到有消息ack
+global : true/false 是否将上面设置应用于channel, 简单来说就是上面的限制是channel级别的还是consumer级别
+注意 :
+prefetchSize和global这两项, RabbitMQ没有实现, 暂且不关注, prefetchCount在autoAck设置false的情况下生效, 即在自动确认的情况下这两个值是不生效的
 
 
 
