@@ -211,4 +211,4 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 ## 2. 镜像模式
 * 镜像模式：集群模式非常经典的就是Mirror镜像模式，保证100%数据不丢失，在实际工作中用的最多的。并且实现集群非常的简单，一般互联网大厂都会构建这种镜像集群模式。
 * Mirror镜像队列，目的是为了保证rabbitmq数据的高可靠性解决方案，主要就是实现数据的同步，一般来讲是2-3个实现数据同步（对于100%数据可靠性解决方案一般是3个节点）集群架构如下：
-![img]{https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F.webp}
+![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F.webp)
