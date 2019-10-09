@@ -205,3 +205,5 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
   	server bhz76 192.168.11.12:5672 check inter 5000 rise 2 fall 3 #主节点
   	server bhz77 192.168.11.13:5672 backup check inter 5000 rise 2 fall 3 #备用节点
 ```
+**备注**
+	rabbitmq集群节点配置 #inter 每隔5秒对mq集群做健康检查，2次正确证明服务器可用，3次失败证明服务器不可用，并且配置主备机制
