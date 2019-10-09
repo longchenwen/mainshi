@@ -197,10 +197,10 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 1. 主备模式：所谓rabbitmq另外一种模式就是warren（兔子窝），就是一个主/备方案（主节点如果挂了，从节点提供服务而已，和activemq利用zookeeper做主/备一样）如图下所示:
   ![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbitmq%E4%B8%BB%E5%A4%87%E6%A8%A1%E5%BC%8F.png)
   
-  	HaProxy配置：
-  		listen rabbitmq_cluster
-  		bind 0.0.0.0:5672 
- 		 mode tcp  #配置TCP模式
-  		balance roundrobin #简单的轮询
-  		server bhz76 192.168.11.12:5672 check inter 5000 rise 2 fall 3 #主节点
-  		server bhz77 192.168.11.13:5672 backup check inter 5000 rise 2 fall 3 #备用节点
+  1. HaProxy配置：
+  	listen rabbitmq_cluster
+  	bind 0.0.0.0:5672 
+ 	mode tcp  #配置TCP模式
+  	balance roundrobin #简单的轮询
+  	server bhz76 192.168.11.12:5672 check inter 5000 rise 2 fall 3 #主节点
+  	server bhz77 192.168.11.13:5672 backup check inter 5000 rise 2 fall 3 #备用节点
