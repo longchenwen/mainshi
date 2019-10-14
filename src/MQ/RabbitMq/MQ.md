@@ -30,7 +30,7 @@
 ## RabbitMQ的高可用
 1.镜像集群模式(高可用)
 这种模式，才是所谓的 RabbitMQ 的高可用模式。跟普通集群模式不一样的是，在镜像集群模式下，你创建的 queue，无论元数据还是 queue 里的消息都会存在于多个实例上，就是说，每个 RabbitMQ 节点都有这个 queue 的一个完整镜像，包含 queue 的全部数据的意思。然后每次你写消息到 queue 的时候，都会自动把消息同步到多个实例的 queue 上。
-
+![img](https://github.com/longchenwen/mainshi/blob/master/src/MQ/RabbitMq/rabbirmq%E9%AB%98%E5%8F%AF%E7%94%A8.png)
 	
 ## 如何解决消息队列的延时以及过期失效问题(几乎不设置过期时间)?
 ## 消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？(增加消费者,queue)
