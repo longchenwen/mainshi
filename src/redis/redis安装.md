@@ -31,6 +31,15 @@
     CONF="/usr/local/redis/redis.conf"  # 配置文件的位置
 
     ```
+    
+   ### 备注：
+      上面的注释的意思是，redis服务必须在运行级2，3，4，5下被启动或关闭，启动的优先级是90，关闭的优先级是10。从redis 安装目录中拷贝过来，可能没有，需要添加 上去; 否则 chkconfig 命令 会失败;
+      
+  ### 3.开机启动设置，执行一下命令：
+    添加redis服务：
+        chkconfig --add redis
+    设为开机启动 ：
+        chkconfig redis on
 
 
   
