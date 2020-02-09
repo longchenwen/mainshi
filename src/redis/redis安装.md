@@ -40,6 +40,8 @@
         chkconfig --add redis
     设为开机启动 ：
         chkconfig redis on
+        
+  ### 4.auth password  设置密码
 
 
   
