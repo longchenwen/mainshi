@@ -19,7 +19,18 @@
       cp /usr/local/redis-4.0.8/utils/redis_init_script /etc/init.d/
       
   ### 2.修改/etc/init.d/reids_init_script 文件
-      ![img](https://github.com/longchenwen/mainshi/blob/master/src/redis/redis%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85.png)
+    ```
+    # chkconfig: 2345 10 90
+    # description: Start and Stop redis
+
+    REDISPORT=6379
+    EXEC=/usr/local/bin/redis-server
+    CLIEXEC=/usr/local/bin/redis-cli  #这是安装的路径
+
+    PIDFILE=/var/run/redis_${REDISPORT}.pid
+    CONF="/usr/local/redis/redis.conf"  # 配置文件的位置
+
+    ```
 
 
   
