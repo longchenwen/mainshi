@@ -13,3 +13,14 @@
 * 先创建一个文件,在安装时使用命令 make install PREFIX=/usr/local/redis 指定安装到路径
 * 将配置文件复制到这个安装的路径
 
+## 3.安装redis开机自动启动
+  
+  ### 1. 拷贝 redis 安装目前下的 /usr/local/redis-4.0.8/utils/redis_init_script 到 /etc/init.d文件中
+      cp /usr/local/redis-4.0.8/utils/redis_init_script /etc/init.d/
+      
+  ### 2.修改/etc/init.d/reids_init_script 文件
+      
+
+
+  
+
