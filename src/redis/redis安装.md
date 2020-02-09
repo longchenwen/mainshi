@@ -19,7 +19,7 @@
       cp /usr/local/redis-4.0.8/utils/redis_init_script /etc/init.d/
       
   ### 2.修改/etc/init.d/reids_init_script 文件
-      
+      [img]{https://github.com/longchenwen/mainshi/blob/master/src/redis/redis%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85.png}
 
 
   
