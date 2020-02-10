@@ -39,7 +39,8 @@
 　　（10）sunion key1 key2：求key1 key2 的并集
 　　（11）sdiff key1 key2：求key1 key2的差集
 　　（12）sinterstore res key1 key2：求key1 key2的交集并存在res里
-    ```
+   
+   ```
  
 ## redis总结</br>
   1.redis持久化策略之RDB和AOF:</br>
