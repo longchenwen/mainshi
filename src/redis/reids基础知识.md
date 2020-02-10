@@ -3,19 +3,19 @@
 ##  redis基本类型及特点
     1.string:
     2.hash(哈希):适用于存储对象
-    3.list(列表):按着插入顺序排序
-    4.set(集合):无顺序,哈希表实现,元素不允许需重复
+    3.list(列表,string有序集合):按着插入顺序排序
+    4.set(集合,string无序集合):无顺序,哈希表实现,元素不允许需重复
     5.sorted set:有序集合(按分数的从小到大排序的),元素不允许需重复,从小到大排序
    
  ## 基本练习命令
- # 1.String: 
+ ## 1.String: 
     ```
     1. setnx key value 在key不存在的情况执行,失败:0,成功:1
     2. set key value ex time(秒):设置key过期时间
     3. setex key time(秒) value: 设置过期时间的简写
     4. ttl key:查看过期剩余时间
     ```
-  # 2.Hash:
+ ## 2.Hash:
    ```
     1. hset myhash field value：设置myhash的field为value
     2. hsetnx myhash field value：不存在的情况下设置myhash的field为value
@@ -25,7 +25,22 @@
     6. hdel myhash field：删除指定的field
     7. hmset myhash field1 value1 field2 value2：同时设置多个field  就是将java集合Map 存储到redis里的Hash里面
    ```
-    
+ ## 3.Set:
+    ```
+    （1）sadd key value1 value2：往集合里面添加元素
+　　（2）smembers key：获取集合所有的元素
+　　（3）srem key value：删除集合某个元素
+　　（4）spop key：返回并删除集合中1个随机元素（可以坐抽奖，不会重复抽到某人）　　　
+　　（5）srandmember key：随机取一个元素
+　　（6）sismember key value：判断集合是否有某个值
+　　（7）scard key：返回集合元素的个数
+　　（8）smove source dest value：把source的value移动到dest集合中
+　　（9）sinter key1 key2 key3：求key1 key2 key3的交集
+　　（10）sunion key1 key2：求key1 key2 的并集
+　　（11）sdiff key1 key2：求key1 key2的差集
+　　（12）sinterstore res key1 key2：求key1 key2的交集并存在res里
+    ```
+ 
 ## redis总结</br>
   1.redis持久化策略之RDB和AOF:</br>
   2.redis主从复制原理分析:</br>
