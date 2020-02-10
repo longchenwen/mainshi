@@ -27,18 +27,18 @@
    ```
  ## 3.Set:
     ```
-    1. sadd key value1 value2：往集合里面添加元素
-　　2. smembers key：获取集合所有的元素
-　　（3）srem key value：删除集合某个元素
-　　（4）spop key：返回并删除集合中1个随机元素（可以坐抽奖，不会重复抽到某人）　　　
-　　（5）srandmember key：随机取一个元素
-　　（6）sismember key value：判断集合是否有某个值
-　　（7）scard key：返回集合元素的个数
-　　（8）smove source dest value：把source的value移动到dest集合中
-　　（9）sinter key1 key2 key3：求key1 key2 key3的交集
-　　（10）sunion key1 key2：求key1 key2 的并集
-　　（11）sdiff key1 key2：求key1 key2的差集
-　　（12）sinterstore res key1 key2：求key1 key2的交集并存在res里
+      1. sadd key value1 value2：往集合里面添加元素
+　　  2. smembers key：获取集合所有的元素
+　　 （3）srem key value：删除集合某个元素
+　　 （4）spop key：返回并删除集合中1个随机元素（可以坐抽奖，不会重复抽到某人）　　　
+　　 （5）srandmember key：随机取一个元素
+　　 （6）sismember key value：判断集合是否有某个值
+　　 （7）scard key：返回集合元素的个数
+　　 （8）smove source dest value：把source的value移动到dest集合中
+　　 （9）sinter key1 key2 key3：求key1 key2 key3的交集
+　　 （10）sunion key1 key2：求key1 key2 的并集
+　　 （11）sdiff key1 key2：求key1 key2的差集
+　　  12）sinterstore res key1 key2：求key1 key2的交集并存在res里
    
    ```
  
