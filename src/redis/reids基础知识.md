@@ -41,6 +41,25 @@
 　　12.sinterstore res key1 key2：求key1 key2的交集并存在res里     
    
    ```
+### 4.Zset(有序集合)
+```
+ 1.zadd key score1 value1：添加元素
+　  2.zrange key start stop [withscore]：把集合排序后,返回名次[start,stop]的元素  默认是升续排列  withscores 是把score也打印出来
+　　3.zrank key member：查询member的排名（升序0名开始）
+　　4.zrangebyscore key min max [withscores] limit offset N：集合（升序）排序后取score在[min, max]内的元素，并跳过offset个，取出N个 
+　　5.zrevrank key member：查询member排名（降序 0名开始）
+　　6.zremrangebyscore key min max：按照score来删除元素，删除score在[min, max]之间
+　　7.zrem key value1 value2：删除集合中的元素
+　　8.zremrangebyrank key start end：按排名删除元素，删除名次在[start, end]之间的
+　　9.zcard key：返回集合元素的个数
+　　10.zcount key min max：返回[min, max]区间内元素数量
+　　11.zinterstore dest numkeys key1[key2..] [WEIGHTS weight1 [weight2...]] [AGGREGATE SUM|MIN|MAX]
+　　求key1，key2的交集，key1，key2的权值分别是weight1，weight2
+　　聚合方法用 sum|min|max
+　　聚合结果 保存子dest集合内
+　　注意：weights,aggregate如何理解？
+　　　　答：如果有交集，交集元素又有score，score怎么处理？aggregate num->score相加，min最小score，max最大score，另外可以通过weights设置不同的key的权重，交集时  score*weight
+```
  
 ## redis总结</br>
   1.redis持久化策略之RDB和AOF:</br>
