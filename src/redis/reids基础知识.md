@@ -8,20 +8,20 @@
     5.sorted set:有序集合(按分数的从小到大排序的),元素不允许需重复,从小到大排序
    
  ## 基本练习命令
- 1.String: 
+ # 1.String: 
     ```
-    1.setnx key value 在key不存在的情况执行,失败:0,成功:1
-    2.set key value ex time(秒):设置key过期时间
-    3.setex key time(秒) value: 设置过期时间的简写
-    4.ttl key:查看过期剩余时间
+    1. setnx key value 在key不存在的情况执行,失败:0,成功:1
+    2. set key value ex time(秒):设置key过期时间
+    3. setex key time(秒) value: 设置过期时间的简写
+    4. ttl key:查看过期剩余时间
     ```
-   2.Hash:
+  # 2.Hash:
    ```
-    1.hset myhash field value：设置myhash的field为value
-    2.hsetnx myhash field value：不存在的情况下设置myhash的field为value
-    3.hkeys myhash：返回hash所有的field
-    4.hvals myhash：返回hash所有的value
-    5.hgetall myhash：获取某个hash中全部的field及value
+    1. hset myhash field value：设置myhash的field为value
+    2. hsetnx myhash field value：不存在的情况下设置myhash的field为value
+    3. hkeys myhash：返回hash所有的field
+    4. hvals myhash：返回hash所有的value
+    5. hgetall myhash：获取某个hash中全部的field及value
     6. hdel myhash field：删除指定的field
     7. hmset myhash field1 value1 field2 value2：同时设置多个field  就是将java集合Map 存储到redis里的Hash里面
    ```
