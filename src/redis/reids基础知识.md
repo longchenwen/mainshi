@@ -27,8 +27,8 @@
    ```
  ## 3.Set:
     ```
-    （1）sadd key value1 value2：往集合里面添加元素
-　　（2）smembers key：获取集合所有的元素
+    1. sadd key value1 value2：往集合里面添加元素
+　　2. smembers key：获取集合所有的元素
 　　（3）srem key value：删除集合某个元素
 　　（4）spop key：返回并删除集合中1个随机元素（可以坐抽奖，不会重复抽到某人）　　　
 　　（5）srandmember key：随机取一个元素
