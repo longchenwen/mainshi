@@ -162,10 +162,9 @@ prefetchSize和global这两项, RabbitMQ没有实现, 暂且不关注, prefetchC
 
 ## SimpleMessageListenerContainer 即简单消息监听容器
 
-关注
-SpringAMQP 消息容器 - SimpleMessageListenerContainer
-	简述:SimpleMessageListenerContainer 即简单消息监听容器。
-	这个类非常的强大，我们可以对他进行很多的设置，用对于消费者的配置项，这个类都可以满足。它有监听单个或多个队列、自动启动、自动声明功能。
+### SpringAMQP 消息容器 - SimpleMessageListenerContainer
+简述:SimpleMessageListenerContainer 即简单消息监听容器。
+	这个类非常的强大，我们可以对他进行很多的设置，用对于**消费者**的配置项这个类都可以满足。它有监听单个或多个队列、自动启动、自动声明功能。
 
 1. 它可以设置事务特性、事务管理器、事务属性、事务并发、是否开启事务、回滚消息等。但是我们在实际生产中，很少使用事务，基本都是采用补偿机制。
 
@@ -178,6 +177,7 @@ SpringAMQP 消息容器 - SimpleMessageListenerContainer
 5. 它还可以设置具体的监听器、消息转换器等等。
 
 6.注意: SimpleMessageListenerContainer 可以进行动态设置，比如在运行中的应用可以动态的修改其消费者数量的大小、接收消息的模式等。很多基于 rabbitMQ 的自制定化后端管控台在进行设置的时候，也是根据这一去实现的。所以可以看出 SpringAMQP 非常的强大
+
 ## MessageListenerAdapter  消息监听适配器
 
 ## MessageConverter 消息转化器
