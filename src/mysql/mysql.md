@@ -55,3 +55,8 @@
 	3.第三种方法:使用CREATE INDEX命令创建,CREATE INDEX可对表增加普通索引或UNIQUE索引。（但是，不能创建PRIMARY KEY索引）
 		3.1 create index index_name on table_name(column_list)
 		3.2 create unique index_name on table_name(column_list)
+		
+## 6.数据库集群产生哪些问题
+1.自增id问题
+2.数据关联查询问题
+3.数据同步问题
