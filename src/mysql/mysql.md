@@ -56,6 +56,10 @@
 		3.1 create index index_name on table_name(column_list)
 		3.2 create unique index_name on table_name(column_list)
 		
+
+### 5.2
+		
+		
 ## 6.数据库集群产生哪些问题
 1. 自增id问题
 * 解决:
