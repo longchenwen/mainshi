@@ -309,3 +309,23 @@ redis 如果仅仅只是将数据缓存在内存里面，如果 redis 宕机了�
 
 ## 8. redis集群模式
 前言:redis cluster，主要是针对海量数据+高并发+高可用的场景。redis cluster 支撑 N 个 redis master node，每个 master node 都可以挂载多个 slave node。这样整个 redis 就可以横向扩容了。如果你要支撑更大数据量的缓存，那就横向扩容更多的 master 节点，每个 master 节点就能存放更多的数据了。
+
+## 9.通过redis实现分布式锁:
+```
+实现分布式锁用的命令:set key value [ex seconds] [px milliseconds] [nx|xx]
+注释:
+1.ex seconds:设置键的过期时间为seconds秒
+2.px milliseconds:设置键的过期时间为milliseconds毫秒
+3.nx: 只在键不存在时,才对键进行设置操作
+4.xx: 只在键存在时,才对键进行设置操作
+5.set 操作成功完成时.返回ok,否则返回nil
+```
+## 10.分布式锁需要解决的问题:
+1. 互斥性
+2. 安全性
+3. 死锁
+4.容错
+
+## 11.大量的Key同时过期的注意事项:
+集中过期,由于清除大量的key很耗时,会出现短暂的卡顿现象
+	解决方案:1.在设置Key的过期时间的时候,给没个key加上随机值
