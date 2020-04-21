@@ -76,9 +76,9 @@ AMQP协议模型图:![img](https://github.com/longchenwen/mainshi/blob/master/sr
     2. 如果不落库, 数据都存储到缓存中, 如何设置定时同步的策略
 ## Confirm确认消息
   1. 消息确认的理解:是指生产者投递消息后, 如果Broker收到消息, 则会给我们产生一个应答,生产者进行接收应答, 用来确定这条消息是否正常发送到Broker, 这种方式也是消息的可靠性投递的核心保障
-  2. 如何实现Confirm确认消息(生产端)
-    1. 在channel上开启确认模式 : channel.confirmSelect()</br>
-    2. 在channel上添加监听 : addConfirmListener, 监听成功和失败的返回结果, 根据具体的结果对消息进行重新发送, 或记录日志等后续处理</br>
+  2. 如何实现Confirm确认消息(生产端)</br>
+    	1. 在channel上开启确认模式 : channel.confirmSelect()</br>
+   	2. 在channel上添加监听 : addConfirmListener, 监听成功和失败的返回结果, 根据具体的结果对消息进行重新发送, 或记录日志等后续处理</br>
     		
     	```
     		//添加一个确认监听
